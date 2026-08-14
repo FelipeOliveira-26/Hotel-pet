@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hotel Pet  Reservas</title>
+
+</head>
+
+<body>
+
+    
+    
+
+        <h1>Hotel Pet</h1>
+
+        
+            
+            <a href="">
+                Pet
+            </a>
+
+            <a href="">
+                Usuários
+            </a>
+
+            <a href="">
+                Configurações
+            </a>
+
+            <a href="">
+                Reservas
+            </a>
+
+        
+
+    
+
+
+    
+    <main>
+
+        <!-- Cabeçalho -->
+        <header>
+
+            <div>
+                <span>Home / Reservas</span>
+            </div>
+
+            <div>
+                
+                <span>João da Silva</span>
+            </div>
+
+        </header>
+
+
+        <!-- Conteudo da pagina -->
+        <section>
+
+            <h2>Reservas</h2>
+            
+          <a href="nova_reserva.html">
+              <button type="button">
+                + Nova reserva
+              </button>
+          </a>
+
+            
+            <section>
+
+                <form>
+
+                    <!-- Primeira coluna  -->
+                    <div>
+
+                        <label for="id">
+                            Id
+                        </label>
+
+                        <input
+                            type="text"
+                            id="id"
+                            name="id"
+                        >
+
+
+                        <label for="proprietario">
+                            Proprietário
+                        </label>
+
+                        <input
+                            type="text"
+                            id="proprietario"
+                            name="proprietario"
+                        >
+
+
+                        <label for="status">
+                            Status
+                        </label>
+
+                        <select id="status" name="status">
+
+                            <option value="">
+                                Selecione
+                            </option>
+
+                            <option value="reservado">
+                                Reservado
+                            </option>
+
+                            <option value="em-progresso">
+                                Em progresso
+                            </option>
+
+                            <option value="finalizada">
+                                Finalizada
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Segunda coluna -->
+                    <div>
+
+                        <label for="data_inicio">
+                            Período
+                        </label>
+
+                        <input
+                            type="date"
+                            id="data_inicio"
+                            name="data_inicio"
+                        >
+
+                        <input
+                            type="date"
+                            id="data_fim"
+                            name="data_fim"
+                        >
+
+
+                        <label for="total_min">
+                            Total
+                        </label>
+
+                        <input
+                            type="text"
+                            id="total_min"
+                            name="total_min"
+                            placeholder="R$ 0,00"
+                        >
+
+                        <input
+                            type="text"
+                            id="total_max"
+                            name="total_max"
+                            placeholder="R$ 0,00"
+                        >
+
+
+                        <label for="pet">
+                            Pet
+                        </label>
+
+                        <input
+                            type="text"
+                            id="pet"
+                            name="pet"
+                        >
+
+                    </div>
+
+
+                    <!-- Botões -->
+                    <div>
+
+                        <button type="submit">
+                             Pesquisar
+                        </button>
+
+                        <button type="reset">
+                             Limpar
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+
+            <!-- Tabela de reservas  -->
+            <section>
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th></th>
+
+                            <th>
+                                Id 
+                            </th>
+
+                            <th>
+                                Pet 
+                            </th>
+
+                            <th>
+                                Chegada 
+                            </th>
+
+                            <th>
+                                Partida 
+                            </th>
+
+                            <th>
+                                Status 
+                            </th>
+
+                            <th>
+                                Total 
+                            </th>
+
+                            <th>
+                                Ações
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <!-- Reserva 1 -->
+                        <tr>
+
+                            <td>
+                                <input
+                                    type="checkbox"
+                                    checked
+                                >
+                            </td>
+
+                            <td>
+                                12349984501
+                            </td>
+
+                            <td>
+                                max
+                            </td>
+
+                            <td>
+                                02/06/2021
+                            </td>
+
+                            <td>
+                                07/05/2020
+                            </td>
+
+                            <td>
+                                Reservado
+                            </td>
+
+                            <td>
+                                R$ 40,00
+                            </td>
+
+                            <td>
+                                <a href="">
+                                    Editar
+                                </a>
+
+                                <a href="">
+                                    Visualizar
+                                </a>
+                            </td>
+
+                        </tr>
+
+
+                        <!-- Reserva 2 -->
+                        <tr>
+
+                            <td>
+                                <input type="checkbox">
+                            </td>
+
+                            <td>
+                                12349984501
+                            </td>
+
+                            <td>
+                                ginger
+                            </td>
+
+                            <td>
+                                02/06/2021
+                            </td>
+
+                            <td>
+                                07/05/2020
+                            </td>
+
+                            <td>
+                                Em progresso
+                            </td>
+
+                            <td>
+                                R$ 40,00
+                            </td>
+
+                            <td>
+                                <a href="#">
+                                    Editar
+                                </a>
+
+                                <a href="#">
+                                    Visualizar
+                                </a>
+                            </td>
+
+                        </tr>
+
+
+                        <!-- Reserva 3 -->
+                        <tr>
+
+                            <td>
+                                <input type="checkbox">
+                            </td>
+
+                            <td>
+                                12349984501
+                            </td>
+
+                            <td>
+                                max
+                            </td>
+
+                            <td>
+                                02/06/2021
+                            </td>
+
+                            <td>
+                                07/05/2020
+                            </td>
+
+                            <td>
+                                Finalizada
+                            </td>
+
+                            <td>
+                                R$ 40,00
+                            </td>
+
+                            <td>
+                                <a href="">
+                                    Editar
+                                </a>
+
+                                <a href="">
+                                    Visualizar
+                                </a>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </section>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hotel Pet - Nova Reserva</title>
+
+</head>
+
+<body>
+
+    <!-- Menu lateral -->
+    
+
+        <h1>Hotel Pet</h1>
+
+    
+            <a href="tela_reserva.html">
+                Home
+            </a>
+
+            <a href="">
+                 Pet
+            </a>
+
+        
+            <a href="">
+                 Configurações
+            </a>
+
+            <a href="tela_reserva.html">
+                 Reservas
+            </a>
+
+    <main>
+
+        <!-- Cabeçalho -->
+        <header>
+
+            <span>
+                Home / Reservas / Nova reserva
+            </span>
+
+            <div>
+
+                <span>
+                    João da Silva
+                </span>
+
+            </div>
+
+        </header>
+
+
+        <!-- Área de reserva -->
+        <section>
+
+            <h2>Fazer reserva</h2>
+
+            <form>
+
+                <!-- PET -->
+                <div>
+
+                    <label for="pet">
+                        Pet *
+                    </label>
+
+                    <br>
+
+                    <input
+                        type="text"
+                        id="pet"
+                        name="pet"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Período -->
+                <div>
+
+                    <label for="data_inicio">
+                        Período *
+                    </label>
+
+                    <br>
+
+                    <input
+                        type="date"
+                        id="data_inicio"
+                        name="data_inicio"
+                        required
+                    >
+
+                    <input
+                        type="date"
+                        id="data_fim"
+                        name="data_fim"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Notas -->
+                <div>
+
+                    <label for="notas">
+                        Notas
+                    </label>
+
+                    <br>
+
+                    <textarea
+                        id="notas"
+                        name="notas"
+                        rows="5"
+                        placeholder="Digite alguma observação..."
+                    ></textarea>
+
+                </div>
+
+
+                <!-- Valor -->
+                <p>
+                    Total das diárias:
+                    <span>R$ 40,00</span>
+                </p>
+
+
+                <!-- Botões -->
+                <div>
+                    
+                    
+                    <button type="submit">
+                         Salvar
+                    </button>
+                    
+
+                    <button type="reset">
+                         Limpar
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
