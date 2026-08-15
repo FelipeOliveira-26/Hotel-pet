@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hotel Pet  Novo Usuário</title>
+
+</head>
+
+<body>
+
+        <h1>Hotel Pet</h1>
+
+          <!-- Menu lateral -->
+
+            <a href="tela_pet.html">
+                 Pet
+            </a>
+
+            <a href="tela_usuario.html">
+                 Usuários
+            </a>
+
+            <a href="tela_configuracoes.html">
+                 Configurações
+            </a>
+
+            <a href="tela_reserva.html">
+                 Reservas
+            </a>
+
+        
+
+    
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main>
+
+        <!-- CABEÇALHO -->
+        <header>
+
+            <span>
+                Home / Usuário / Novo usuário
+            </span>
+
+            <div>
+
+                <span>
+                    João da Silva
+                </span>
+
+            </div>
+
+        </header>
+
+
+        <!-- Formulário -->
+        <section>
+
+            <h2>Editar Perfil</h2>
+
+            <form>
+
+                <!-- Email -->
+                <div>
+
+                    <label for="email">
+                        Email *
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Nome -->
+                <div>
+
+                    <label for="nome">
+                        Nome *
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nome"
+                        name="nome"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Sobrenome -->
+                <div>
+
+                    <label for="sobrenome">
+                        Sobrenome
+                    </label>
+
+                    <input
+                        type="text"
+                        id="sobrenome"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Telefone -->
+                <div>
+
+                    <label for="telefone">
+                        Telefone *
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="telefone"
+                        name="telefone"
+                        required
+                    >
+
+                </div>
+
+                <!-- Função -->
+                <div>
+
+                    <label for="funcao">
+                        Função
+                    </label>
+
+                    <select
+                        id="funcao"
+                        name="funcao"
+                    >
+
+                        <option value="funcionario" selected>
+                            Funcionário
+                        </option>
+
+                        <option value="cliente">
+                            Cliente
+                        </option>
+
+                        <option value="gerente">
+                            Gerente
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- foto -->
+                <div>
+
+                    <label for="foto">
+                        Foto
+                    </label>
+
+                    <input
+                        type="file"
+                        id="foto"
+                        name="foto"
+                        accept="image/*"
+                    >
+
+                </div>
+
+
+                <!-- Botões -->
+                <div>
+
+                    <button type="submit">
+                         Salvar
+                    </button>
+
+                    <button type="reset">
+                         Limpar
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

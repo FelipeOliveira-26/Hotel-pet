@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hotel Pet  Pets</title>
+
+    
+</head>
+
+<body>
+
+
+        <h1>Hotel Pet</h1>
+          
+          <!-- menu lateral -->
+
+            <a href="tela_pet.html">
+                 Pets
+            </a>
+
+            <a href="tela_usuario.html">
+                 Usuários
+            </a>
+
+            <a href="tela_configuracoes.html">
+                 Configurações
+            </a>
+
+            <a href="tela_reserva.html">
+                 Reservas
+            </a>
+
+    
+    <main>
+
+        <!-- cabeçalho -->
+        <header>
+
+            <span>
+                Home / Pets
+            </span>
+
+            <div>
+
+                <span>
+                    João da Silva
+                </span>
+
+            </div>
+
+        </header>
+
+
+        <!-- listagem de pets -->
+        <div>
+
+            <h2>Pets</h2>
+
+
+            <!-- botão novo pet -->
+            
+              <a href="nova_reserva.html">
+              <button type="button">
+                + Nova reserva
+              </button>
+              </a>
+
+            <!-- filtros de pesquisa -->
+            <form>
+
+                <div>
+
+                    <label for="id">Id</label>
+                    <input type="text" id="id" name="id">
+
+                    <label for="raca">raça</label>
+                    <input type="text" id="raca" name="raca">
+
+                </div>
+
+                <div>
+
+                    <label for="nome">nome</label>
+                    <input type="text" id="nome" name="nome">
+
+                    <label for="tamanho">tamanho</label>
+                    <input type="text" id="tamanho" name="tamanho">
+
+                </div>
+
+
+                <div>
+
+                    <button type="submit">
+                         Pesquisar
+                    </button>
+
+                    <button type="reset">
+                         Limpar
+                    </button>
+
+                </div>
+
+            </form>
+
+
+            <!-- tabela de pets -->
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th></th>
+
+                        <th>
+                            Id
+                        </th>
+
+                        <th>
+                            nome
+                        </th>
+
+                        <th>
+                            tipo
+                        </th>
+
+                        <th>
+                            raça
+                        </th>
+
+                        <th>
+                            tamanho
+                        </th>
+
+                        <th></th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>
+                            <input type="checkbox" checked>
+                        </td>
+
+                        <td>
+                            1234984501
+                        </td>
+
+                        <td>
+                            Max
+                        </td>
+
+                        <td>
+                            Cachorro
+                        </td>
+
+                        <td>
+                            Pastor Alemão
+                        </td>
+
+                        <td>
+                            Grande
+                        </td>
+
+                        <td>
+                            <a href="editar_pet.html">Editar</a>
+                            <a href="visualizar_pet.html">Visualizar</a>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>
+                            <input type="checkbox">
+                        </td>
+
+                        <td>
+                            1234984501
+                        </td>
+
+                        <td>
+                            Ginger
+                        </td>
+
+                        <td>
+                            Gato
+                        </td>
+
+                        <td>
+                            Não definida
+                        </td>
+
+                        <td>
+                            Pequeno
+                        </td>
+
+                        <td>
+                            <a href="editar_pet.html">Editar</a>
+                            <a href="visualizar_pet.html">Visualizar</a>
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>

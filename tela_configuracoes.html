@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hotel Pet  Configurações</title>
+
+</head>
+
+<body>
+
+    <!-- Menu lateral -->
+
+        <h1>Hotel Pet</h1>
+
+
+            <a href="tela_pet.html">
+                 Pet
+            </a>
+
+            <a href="tela_usuario.html">
+                 Usuários
+            </a>
+
+            <a href="tela_configuracoes.html">
+                 Configurações
+            </a>
+
+            <a href="tela_reserva.html">
+                 Reservas
+            </a>
+
+    <main>
+
+        <!-- Cabeçalho -->
+        <header>
+
+            <span>
+                Home / Configurações
+            </span>
+
+            <div>
+                <span>
+                    João da Silva
+                </span>
+
+            </div>
+
+        </header>
+
+
+        <!-- Configurações -->
+        <section>
+
+            <h2>Configurações</h2>
+
+            <form>
+
+                <!-- Valor da diária -->
+                <div>
+
+                    <label for="valor_diaria">
+                        Valor da diária
+                    </label>
+
+                    <br>
+
+                    <input
+                        type="number"
+                        id="valor_diaria"
+                        name="valor_diaria"
+                        step="0.01"
+                        min="0"
+                    >
+
+                </div>
+
+
+                <!-- Vagas disponiveis -->
+                <div>
+
+                    <label for="vagas">
+                        Vagas disponíveis
+                    </label>
+
+                    <br>
+
+                    <input
+                        type="number"
+                        id="vagas"
+                        name="vagas"
+                        min="0"
+                    >
+
+                </div>
+
+
+                <!-- Botões -->
+                <div>
+                   <a href="tela_reserva.html">
+                     <button type="submit">
+                         Salvar
+                     </button>
+                   </a>
+                    <button type="reset">
+                         Limpar
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

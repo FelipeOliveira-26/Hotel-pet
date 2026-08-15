@@ -5,28 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Hotel Pet  Nova Reserva</title>
+    <title>Hotel Pet  Editar Reserva</title>
 
+    
 </head>
 
 <body>
-
-    <!-- Menu lateral -->
     
-
         <h1>Hotel Pet</h1>
 
-         <!-- Menu lateral -->
-
-            <a href="tela_reserva.html">
-                Home
-            </a>
+        <!-- Menu lateral -->
 
             <a href="tela_pet.html">
                  Pet
             </a>
 
-        
+            <a href="tela_usuario.html">
+                 Usuários
+            </a>
+
             <a href="tela_configuracoes.html">
                  Configurações
             </a>
@@ -41,7 +38,7 @@
         <header>
 
             <span>
-                Home / Reservas / Nova reserva
+                Home / Reservas / Editar reserva
             </span>
 
             <div>
@@ -55,20 +52,37 @@
         </header>
 
 
-        <!-- Área de reserva -->
+        <!-- Formulário -->
+        
 
-            <h2>Fazer reserva</h2>
+            <h2>Editar reserva</h2>
 
             <form>
 
-                <!-- PET -->
+                <!-- Proprietário -->
+                <div>
+
+                    <label for="proprietario">
+                        Proprietário *
+                    </label>
+
+                    <input
+                        type="text"
+                        id="proprietario"
+                        name="proprietario"
+                        value="José da Silva"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Pet -->
                 <div>
 
                     <label for="pet">
                         Pet *
                     </label>
-
-                    <br>
 
                     <input
                         type="text"
@@ -119,27 +133,65 @@
                         id="notas"
                         name="notas"
                         rows="5"
-                        placeholder="Digite alguma observação..."
                     ></textarea>
 
                 </div>
 
 
-                <!-- Valor -->
+                <!-- Status -->
+                <div>
+
+                    <label for="status">
+                        Status *
+                    </label>
+
+                    <br>
+
+                    <select
+                        id="status"
+                        name="status"
+                        required
+                    >
+
+                        <option value="reservado" selected>
+                            Reservado
+                        </option>
+
+                        <option value="andamento">
+                            Em andamento
+                        </option>
+
+                        <option value="cancelado">
+                            Cancelado
+                        </option>
+
+                        <option value="finalizado">
+                            Finalizado
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Total -->
                 <p>
+
                     Total das diárias:
-                    <span>R$ 40,00</span>
+
+                    <span>
+                        R$ 40,00
+                    </span>
+
                 </p>
 
 
                 <!-- Botões -->
                 <div>
-                    
-                    
+
                     <button type="submit">
                          Salvar
                     </button>
-                    
 
                     <button type="reset">
                          Limpar
@@ -149,7 +201,6 @@
 
             </form>
 
-        
 
     </main>
 

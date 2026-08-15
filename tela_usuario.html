@@ -5,67 +5,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Hotel Pet  Reservas</title>
+    <title>Hotel Pet  Usuários</title>
 
+    
 </head>
 
 <body>
 
-    
-    
 
         <h1>Hotel Pet</h1>
 
-        
-            
+    <!-- Menu lateral-->
+
             <a href="tela_pet.html">
-                Pet
+                 Pet
             </a>
 
             <a href="tela_usuario.html">
-                Usuários
+                 Usuários
             </a>
 
             <a href="tela_configuracoes.html">
-                Configurações
+                 Configurações
             </a>
 
             <a href="tela_reserva.html">
-                Reservas
+                 Reservas
             </a>
+
     
     <main>
 
         <!-- Cabeçalho -->
-        <header>
+        
+            <span>
+                Home / Usuários
+            </span>
 
             <div>
-                <span>Home / Reservas</span>
+
+                <span>
+                    João da Silva
+                </span>
+
             </div>
 
+        <!-- Usuários -->
+
+            <h2>Usuários</h2>
+
+
+            <!-- Ações -->
             <div>
-                
-                <span>João da Silva</span>
+             <a href="novo_usuario.html">
+                <button type="button">
+                     Novo
+                </button>
+             </a>
+                <button type="button">
+                     Remover
+                </button>
+
+                <button type="button">
+                     Mudar status
+                </button>
+
             </div>
 
-        </header>
+
+            <!-- Filtro de visualização -->
+            <div>
+
+                <p>
+                    Visualizar Por:
+                </p>
+
+                <button type="button">
+                    Usuários
+                </button>
+
+                <button type="button">
+                    Função
+                </button>
+
+            </div>
 
 
-        <!-- Conteudo da pagina -->
-
-            <h2>Reservas</h2>
-            
-          <a href="nova_reserva.html">
-              <button type="button">
-                + Nova reserva
-              </button>
-          </a>
-
-            
+            <!-- Filtros -->
 
                 <form>
 
-                    <!-- Primeira coluna  -->
+                    <!-- Primeira coluna -->
                     <div>
 
                         <label for="id">
@@ -79,14 +109,14 @@
                         >
 
 
-                        <label for="proprietario">
-                            Proprietário
+                        <label for="email">
+                            Email
                         </label>
 
                         <input
-                            type="text"
-                            id="proprietario"
-                            name="proprietario"
+                            type="email"
+                            id="email"
+                            name="email"
                         >
 
 
@@ -100,16 +130,12 @@
                                 Selecione
                             </option>
 
-                            <option value="reservado">
-                                Reservado
+                            <option value="ativo">
+                                Ativo
                             </option>
 
-                            <option value="em-progresso">
-                                Em progresso
-                            </option>
-
-                            <option value="finalizada">
-                                Finalizada
+                            <option value="inativo">
+                                Inativo
                             </option>
 
                         </select>
@@ -120,51 +146,57 @@
                     <!-- Segunda coluna -->
                     <div>
 
-                        <label for="data_inicio">
-                            Período
+                        <label for="criado_inicio">
+                            Criado em
                         </label>
 
                         <input
                             type="date"
-                            id="data_inicio"
-                            name="data_inicio"
+                            id="criado_inicio"
+                            name="criado_inicio"
                         >
 
                         <input
                             type="date"
-                            id="data_fim"
-                            name="data_fim"
+                            id="criado_fim"
+                            name="criado_fim"
                         >
 
 
-                        <label for="total_min">
-                            Total
+                        <label for="nome">
+                            Nome
                         </label>
 
                         <input
                             type="text"
-                            id="total_min"
-                            name="total_min"
-                            placeholder="R$ 0,00"
-                        >
-
-                        <input
-                            type="text"
-                            id="total_max"
-                            name="total_max"
-                            placeholder="R$ 0,00"
+                            id="nome"
+                            name="nome"
                         >
 
 
-                        <label for="pet">
-                            Pet
+                        <label for="funcao">
+                            Função
                         </label>
 
-                        <input
-                            type="text"
-                            id="pet"
-                            name="pet"
-                        >
+                        <select id="funcao" name="funcao">
+
+                            <option value="">
+                                Selecione
+                            </option>
+
+                            <option value="gerente">
+                                Gerente
+                            </option>
+
+                            <option value="funcionario">
+                                Funcionário
+                            </option>
+
+                            <option value="cliente">
+                                Cliente
+                            </option>
+
+                        </select>
 
                     </div>
 
@@ -184,11 +216,7 @@
 
                 </form>
 
-            
-
-
-            <!-- Tabela de reservas  -->
-            
+            <!-- Tabela -->
 
                 <table>
 
@@ -199,19 +227,19 @@
                             <th></th>
 
                             <th>
-                                Id 
+                                Foto
                             </th>
 
                             <th>
-                                Pet 
+                                Email 
                             </th>
 
                             <th>
-                                Chegada 
+                                Nome 
                             </th>
 
                             <th>
-                                Partida 
+                                Função 
                             </th>
 
                             <th>
@@ -219,11 +247,7 @@
                             </th>
 
                             <th>
-                                Total 
-                            </th>
-
-                            <th>
-                                Ações
+                                Criado em 
                             </th>
 
                         </tr>
@@ -233,7 +257,7 @@
 
                     <tbody>
 
-                        <!-- Reserva 1 -->
+                        <!-- Usuário 1 -->
                         <tr>
 
                             <td>
@@ -244,43 +268,48 @@
                             </td>
 
                             <td>
-                                12349984501
+                                <img
+                                    src="usuario1.png"
+                                    alt="Foto de João da Silva"
+                                >
                             </td>
 
                             <td>
-                                max
+                                joaosilva@pet.com
                             </td>
 
                             <td>
-                                02/06/2021
+                                João da Silva
                             </td>
 
                             <td>
-                                07/05/2020
+                                Gerente
                             </td>
 
                             <td>
-                                Reservado
+                                Ativo
                             </td>
 
                             <td>
-                                R$ 40,00
+                                19/02/2020
                             </td>
 
                             <td>
-                                <a href="editar_reserva.html">
+
+                                <a href="#">
                                     Editar
                                 </a>
 
-                                <a href="ver_reserva.html">
+                                <a href="#">
                                     Visualizar
                                 </a>
+
                             </td>
 
                         </tr>
 
 
-                        <!-- Reserva 2 -->
+                        <!-- Usuário 2 -->
                         <tr>
 
                             <td>
@@ -288,43 +317,48 @@
                             </td>
 
                             <td>
-                                12349984501
+                                <img
+                                    src="usuario2.png"
+                                    alt="Foto de Maria da Silva"
+                                >
                             </td>
 
                             <td>
-                                ginger
+                                maria@pet.com
                             </td>
 
                             <td>
-                                02/06/2021
+                                Maria da Silva
                             </td>
 
                             <td>
-                                07/05/2020
+                                Funcionário
                             </td>
 
                             <td>
-                                Em progresso
+                                Inativo
                             </td>
 
                             <td>
-                                R$ 40,00
+                                19/02/2020
                             </td>
 
                             <td>
-                                <a href="editar_reserva.html">
+
+                                <a href="#">
                                     Editar
                                 </a>
 
-                                <a href="ver_reserva.html">
+                                <a href="#">
                                     Visualizar
                                 </a>
+
                             </td>
 
                         </tr>
 
 
-                        <!-- Reserva 3 -->
+                        <!-- Usuário 3 -->
                         <tr>
 
                             <td>
@@ -332,37 +366,42 @@
                             </td>
 
                             <td>
-                                12349984501
+                                <img
+                                    src="usuario3.png"
+                                    alt="Foto de José da Silva"
+                                >
                             </td>
 
                             <td>
-                                max
+                                josedasilva@pet.com
                             </td>
 
                             <td>
-                                02/06/2021
+                                José da Silva
                             </td>
 
                             <td>
-                                07/05/2020
+                                Cliente
                             </td>
 
                             <td>
-                                Finalizada
+                                Ativo
                             </td>
 
                             <td>
-                                R$ 40,00
+                                19/02/2020
                             </td>
 
                             <td>
-                                <a href="editar_reserva.html">
+
+                                <a href="#">
                                     Editar
                                 </a>
 
-                                <a href="ver_reserva.html">
+                                <a href="#">
                                     Visualizar
                                 </a>
+
                             </td>
 
                         </tr>
@@ -370,8 +409,6 @@
                     </tbody>
 
                 </table>
-
-
     </main>
 
 </body>

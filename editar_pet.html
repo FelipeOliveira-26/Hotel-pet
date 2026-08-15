@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hotel Pet  Editar Pet</title>
+
+    
+</head>
+
+<body>
+
+    <!-- menu lateral -->
+   
+        <h1>Hotel Pet</h1>
+       
+            <a href="tela_pet.html">
+                 Pets
+            </a>
+
+            <a href="tela_usuario.html">
+                 Usuários
+            </a>
+
+            <a href="tela_reserva.html">
+                 Reservas
+            </a>
+
+    
+    <main>
+
+        <!-- cabeçalho -->
+        <header>
+
+            <span>
+                Home / Pet / Editar Pet
+            </span>
+
+            <div>
+
+                <span>
+                    João da Silva
+                </span>
+
+            </div>
+
+        </header>
+
+
+        <!-- formulário editar pet -->
+        <div>
+
+            <h2>Editar Pet</h2>
+
+
+            <form>
+
+                <!-- campos do formulário -->
+                <div>
+
+                    <div>
+
+                        <label for="nome">Nome *</label>
+                        <input type="text" id="nome" name="nome" value="Max" required>
+
+                    </div>
+
+                    <div>
+
+                        <label for="tipo">Tipo *</label>
+                        <select id="tipo" name="tipo" required>
+                            <option value="" disabled></option>
+                            <option value="cachorro" selected>Cachorro</option>
+                            <option value="gato">Gato</option>
+                        </select>
+
+                    </div>
+
+                    <div>
+
+                        <label for="raca">Raça *</label>
+                        <input type="text" id="raca" name="raca" value="Pator Alemão" required>
+
+                    </div>
+
+                    <div>
+
+                        <label for="tamanho">Tamanho *</label>
+                        <select id="tamanho" name="tamanho" required>
+                            <option value="" disabled></option>
+                            <option value="pequeno">Pequeno</option>
+                            <option value="medio">Médio</option>
+                            <option value="grande" selected>Grande</option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- imagem -->
+                <div>
+
+                    <p>
+                        Imagem
+                    </p>
+
+                    <img
+                        src=""
+                        alt="Imagem do pet"
+                    >
+
+                </div>
+
+
+                <!-- botões -->
+                <div>
+
+                    <button type="submit">
+                         Salvar
+                    </button>
+
+                    <button type="reset">
+                         Limpar
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>
