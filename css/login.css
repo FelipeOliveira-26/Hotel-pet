@@ -1,0 +1,66 @@
+body {
+     background-image: url("/imagens/fundo_login.png");
+    background-position: center;
+    background-repeat: no-repeat;
+
+    width: 100vw;
+    height: 100vh;
+
+    margin: 0;
+    overflow: hidden;
+
+    text-align: center;
+}
+
+
+/* título */
+h1 {
+    width: 40%;
+    margin-left: 60%;
+    margin-top: 100px;
+}
+
+
+/* textos */
+p {
+    width: 40%;
+    margin-left: 60%;
+}
+
+
+/* formulário */
+form {
+    width: 40%;
+    margin-left: 60%;
+}
+
+
+/* linha */
+hr {
+    width: 35%;
+    margin-left: 62.5%;
+}
+
+
+/* links */
+a {
+    text-align: center;
+}
+
+
+/* ícones */
+.facebook, .twitter, .google {
+    display: inline-block;
+    margin: 0 5px;
+}
+.facebook {
+    margin-left: 60%;
+}
+
+
+.criar_conta{
+    display: block;
+    width: 40%;
+    margin-left: 60%;
+    text-align: center;
+}
