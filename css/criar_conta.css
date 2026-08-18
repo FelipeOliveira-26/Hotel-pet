@@ -1,0 +1,19 @@
+body{
+    background-image: url("/imagens/imagem_fundo.png");
+   background-position: center;
+    background-repeat: no-repeat;
+
+    width: 100vw;
+    height: 100vh;
+
+    margin: 0;
+    overflow: hidden;
+
+    text-align: center;
+    background-size: 100% 100%;
+}
+
+hr {
+    width: 25%;
+    text-align: center;
+}
