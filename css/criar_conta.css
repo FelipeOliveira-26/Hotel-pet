@@ -2,10 +2,8 @@ body{
     background-image: url("/imagens/imagem_fundo.png");
    background-position: center;
     background-repeat: no-repeat;
-
     width: 100vw;
     height: 100vh;
-
     margin: 0;
     overflow: hidden;
 
@@ -17,3 +15,19 @@ hr {
     width: 25%;
     text-align: center;
 }
+ .caixa{
+     width: 300px;
+    box-sizing: border-box;
+    border-radius: 4px;
+ }
+
+ label{
+    display: inline-block;
+    width: 120px;
+    text-align: right;
+}
+label[for="termos"] {
+    width: auto;
+    text-align: left;
+}
+ 

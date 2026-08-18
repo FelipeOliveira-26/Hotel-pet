@@ -63,3 +63,15 @@ a {
     margin-left: 60%;
     text-align: center;
 }
+input{
+    border-radius: 4px;
+}
+.botao_entrar {
+    display: inline-block;
+    width: 180px;
+    padding: 10px;
+    background-color:  #3B82F6;
+    color: white;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
