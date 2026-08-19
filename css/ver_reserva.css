@@ -1,0 +1,136 @@
+
+* {
+    box-sizing: border-box;
+}
+/* Imagem de fundo */
+body{
+     background-image: url("/imagens/Imagem_fundo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f5f7;
+    margin: 0;
+    padding: 0;
+    color: #333333;
+    display: flex;
+}
+
+/* Menu lateral */
+aside {
+    width: 200px;
+    background-color: #ffffff;
+    border-right: 1px solid #e0e0e0;
+    min-height: 100vh;
+    padding: 20px 0;
+}
+
+aside h1 {
+    margin: 0 0 20px 20px;
+    color: #2d6cdf;
+    font-size: 20px;
+}
+
+aside a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #555555;
+    font-size: 14px;
+}
+
+aside a:hover {
+    color: #2d6cdf;
+}
+
+/* Deixa o link Reservas marcado como ativo */
+aside a:nth-of-type(2) {
+    background-color: #eaf1fd;
+    color: #2d6cdf;
+    font-weight: bold;
+}
+
+/* Conteúdo principal */
+main {
+    flex: 1;
+    padding: 30px;
+}
+
+/* Cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+    color: #777777;
+    font-size: 14px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+/* Cartão com as informações da reserva */
+main > div {
+    background-color: #f0f0f0;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 25px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Cada linha de informação */
+div p {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+div p span,
+div p a {
+    font-weight: bold;
+    color: #333333;
+}
+
+/* Links ficam azuis */
+div p a {
+    color: #2d6cdf;
+    text-decoration: none;
+}
+
+/* Imagens da reserva */
+div div img {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    margin-right: 10px;
+    background-color: #ffffff;
+}
+
+/* Botão Voltar */
+main > div > div:last-child {
+    text-align: left;
+    margin-top: 20px;
+}
+
+main > div > div:last-child a {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #2d6cdf;
+    border: 1px solid #2d6cdf;
+    border-radius: 4px;
+    padding: 8px 18px;
+    text-decoration: none;
+    font-size: 14px;
+}

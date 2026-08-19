@@ -11,14 +11,6 @@ body{
     background-attachment: fixed;
     min-height: 100vh;
 }
-body{
-    background-image: url("/imagens/Imagem_fundo.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    min-height: 100vh;
-}
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f5f7;
@@ -66,7 +58,7 @@ body > a:hover {
     color: #2d6cdf;
 }
 
-/* Deixa a aba marcada como ativa */
+/* Deixa a última aba marcada como ativa */
 body > a:nth-of-type(4) {
     color: #2d6cdf;
     font-weight: bold;
@@ -78,138 +70,95 @@ main {
     padding: 30px;
 }
 
-/* Cabeçalho  */
+/* Cabeçalho */
 header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding-bottom: 15px;
     margin-bottom: 20px;
     border-bottom: 1px solid #e0e0e0;
     color: #777777;
-    font-size: 18px;
+    font-size: 14px;
 }
 
 h2 {
     margin-bottom: 20px;
 }
 
-/* Botão de nova reserva */
-button {
-    cursor: pointer;
-    border: none;
-    border-radius: 4px;
-    font-size: 14px;
-}
-
-main > a button {
-    background-color: #2d6cdf;
-    color: #ffffff;
-    padding: 10px 16px;
-    margin-bottom: 20px;
-    
-}
-
-/* Formulário de pesquisa */
+/* Formulário de editar reserva */
 form {
     background-color: #ffffff;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
+    padding: 25px;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 form > div {
-    display: inline-block;
-    width: 46%;
-    vertical-align: top;
+    margin-bottom: 20px;
 }
 
 label {
     display: block;
     font-size: 13px;
     color: #777777;
-    margin-top: 10px;
     margin-bottom: 5px;
 }
 
 input,
-select {
-    width: 90%;
+select,
+textarea {
     padding: 8px;
     border: 1px solid #cccccc;
     border-radius: 4px;
-}
-
-form > div:last-child {
-    width: 100%;
-    text-align: right;
-}
-
-form button[type="submit"] {
-    background-color: #2d6cdf;
-    color: #ffffff;
-    padding: 10px 20px;
-    margin-top: 20px;
-}
-
-form button[type="reset"] {
-    background-color: #ffffff;
-    color: #555555;
-    border: 1px solid #cccccc;
-    padding: 10px 20px;
-    margin-left: 10px;
-}
-
-/* Tabela */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-}
-
-th {
-    text-align: left;
-    padding: 12px;
-    font-size: 13px;
-    color: #777777;
-    border-bottom: 1px solid #e0e0e0;
-}
-
-td {
-    padding: 12px;
+    font-family: Arial, sans-serif;
     font-size: 14px;
-    border-bottom: 1px solid #e0e0e0;
 }
 
-.status-reservado,
-.status-progresso,
-.status-finalizada {
-    padding: 4px 10px;
-    border-radius: 12px;
-    font-size: 13px;
+input[type="text"],
+select,
+textarea {
+    width: 100%;
+}
+
+input[type="date"] {
+    width: 160px;
+    margin-right: 10px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Total das diárias */
+form > p {
+    font-size: 14px;
+}
+
+form > p span {
+    color: #2d6cdf;
     font-weight: bold;
 }
 
-.status-reservado {
-    background-color: #e0f5e9;
-    color: #2e9e5b;
+/* Botões */
+button {
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 14px;
 }
 
-.status-progresso {
-    background-color: #fdf1d6;
-    color: #c98a12;
-}
-
-.status-finalizada {
-    background-color: #e2ecfc;
-    color: #2d6cdf;
-}
-
-/* Links de ação  */
-td a {
-    color: #2d6cdf;
+button[type="submit"] {
+    background-color: #2d6cdf;
+    color: #ffffff;
+    border: none;
     margin-right: 10px;
-    font-size: 13px;
+}
+
+button[type="reset"] {
+    background-color: #ffffff;
+    color: #2d6cdf;
+    border: 1px solid #2d6cdf;
 }
