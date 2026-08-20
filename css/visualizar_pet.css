@@ -1,0 +1,166 @@
+
+* {
+    box-sizing: border-box;
+}
+/* Imagem de fundo */
+body{
+     background-image: url("/imagens/Imagem_fundo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f5f7;
+    margin: 0;
+    padding: 0;
+    color: #333333;
+    display: flex;
+}
+
+/* Menu lateral */
+aside {
+    width: 200px;
+    background-color: #ffffff;
+    border-right: 1px solid #e0e0e0;
+    min-height: 100vh;
+    padding: 20px 0;
+}
+
+aside h1 {
+    margin: 0 0 20px 20px;
+    color: #2d6cdf;
+    font-size: 20px;
+}
+
+aside nav a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #555555;
+    font-size: 14px;
+}
+
+aside nav a:hover {
+    color: #2d6cdf;
+}
+
+/* Deixa o link "Pets" marcado como ativo */
+aside nav a:nth-of-type(1) {
+    background-color: #eaf1fd;
+    color: #2d6cdf;
+    font-weight: bold;
+}
+
+/* Conteúdo principal */
+main {
+    flex: 1;
+    padding: 30px;
+}
+
+/* Cabeçalho (breadcrumb + usuário) */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+    color: #777777;
+    font-size: 14px;
+}
+
+/* Cartão com as informações do pet */
+main > div {
+    background-color: #f0f0f0;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 25px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+main > div > h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/* Botões Editar / Deletar */
+main > div > div:nth-of-type(1) a {
+    display: inline-block;
+    background-color: #ffffff;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 13px;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+main > div > div:nth-of-type(1) a:nth-of-type(1) {
+    color: #2d6cdf;
+    border: 1px solid #2d6cdf;
+}
+
+main > div > div:nth-of-type(1) a:nth-of-type(2) {
+    color: #555555;
+    border: 1px solid #cccccc;
+}
+
+/* Dados do pet (label + valor) */
+main > div p {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+main > div p span {
+    font-weight: bold;
+}
+
+/* Imagem do pet */
+main > div img {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    background-color: #ffffff;
+    float: right;
+}
+
+/* Reservas do pet */
+main > div a[href=""] {
+    display: block;
+    text-align: right;
+    text-decoration: none;
+    font-size: 13px;
+    margin: 5px 0;
+}
+
+main > div a[href=""]:nth-of-type(1) {
+    color: #2d6cdf;
+}
+
+main > div a[href=""]:nth-of-type(2) {
+    color: #2e9e5b;
+}
+
+/* Botão Voltar */
+main > div > div:last-child {
+    margin-top: 20px;
+}
+
+main > div > div:last-child a {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #2d6cdf;
+    border: 1px solid #2d6cdf;
+    border-radius: 4px;
+    padding: 8px 18px;
+    text-decoration: none;
+    font-size: 14px;
+}

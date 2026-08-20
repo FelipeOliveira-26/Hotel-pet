@@ -2,6 +2,7 @@
 * {
     box-sizing: border-box;
 }
+/* Imagem de fundo */
 body{
      background-image: url("/imagens/Imagem_fundo.png");
     background-size: cover;
@@ -33,7 +34,7 @@ h1 {
     font-size: 20px;
 }
 
-/* Menu lateral */
+/* Menu lateral (links) - aqui são só 3: Pets, Usuários, Reservas */
 a {
     text-decoration: none;
 }
@@ -51,14 +52,14 @@ body > a {
 body > a:nth-of-type(1) { top: 80px; }
 body > a:nth-of-type(2) { top: 116px; }
 body > a:nth-of-type(3) { top: 152px; }
-body > a:nth-of-type(4) { top: 188px; }
 
 body > a:hover {
     color: #2d6cdf;
 }
 
-/* Deixa a aba marcada como ativa */
-body > a:nth-of-type(4) {
+/* Deixa a aba "Pets" marcada como ativa */
+body > a:nth-of-type(1) {
+    background-color: #eaf1fd;
     color: #2d6cdf;
     font-weight: bold;
 }
@@ -67,10 +68,9 @@ body > a:nth-of-type(4) {
 main {
     margin-left: 200px;
     padding: 30px;
-    
 }
 
-/* Cabeçalho  */
+/* Cabeçalho (breadcrumb + usuário) */
 header {
     display: flex;
     justify-content: space-between;
@@ -82,20 +82,33 @@ header {
     font-size: 14px;
 }
 
-h2 {
-    margin-bottom: 20px;
-}
-
-/* Formulário de nova reserva */
-form {
-    background-color: #ffffff;
+/* Cartão do formulário */
+main > div {
+    background-color: #f0f0f0;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     padding: 25px;
-    max-width: 500px;
 }
 
-form > div {
+main > div > h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* Form em duas partes: campos à esquerda e imagem à direita */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+/* Coluna dos campos */
+form > div:first-child {
+    flex: 1;
+    min-width: 300px;
+}
+
+form > div:first-child > div {
     margin-bottom: 20px;
 }
 
@@ -107,38 +120,42 @@ label {
 }
 
 input,
-textarea {
+select {
+    width: 100%;
+    max-width: 350px;
     padding: 8px;
     border: 1px solid #cccccc;
     border-radius: 4px;
+    background-color: #ffffff;
     font-family: Arial, sans-serif;
-}
-
-input[type="text"],
-textarea {
-    width: 100%;
-}
-
-input[type="date"] {
-    width: 160px;
-    margin-right: 10px;
-}
-
-textarea {
-    resize: vertical;
-}
-
-/* Total das diárias */
-form > p {
     font-size: 14px;
 }
 
-form > p span {
-    color: #2d6cdf;
-    font-weight: bold;
+/* Coluna da imagem */
+form > div:nth-child(2) {
+    width: 120px;
+}
+
+form > div:nth-child(2) p {
+    font-size: 13px;
+    color: #777777;
+    margin-bottom: 8px;
+}
+
+form > div:nth-child(2) img {
+    width: 120px;
+    height: 120px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    background-color: #ffffff;
 }
 
 /* Botões */
+form > div:last-child {
+    width: 100%;
+    margin-top: 20px;
+}
+
 button {
     cursor: pointer;
     border-radius: 4px;

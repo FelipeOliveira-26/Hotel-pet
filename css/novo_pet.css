@@ -2,6 +2,7 @@
 * {
     box-sizing: border-box;
 }
+/* Imagem de fundo */
 body{
      background-image: url("/imagens/Imagem_fundo.png");
     background-size: cover;
@@ -16,61 +17,50 @@ body {
     margin: 0;
     padding: 0;
     color: #333333;
+    display: flex;
 }
 
-/* Logo */
-h1 {
-    position: fixed;
-    top: 0;
-    left: 0;
+/* Menu lateral */
+aside {
     width: 200px;
-    height: 100vh;
-    margin: 0;
-    padding: 20px;
     background-color: #ffffff;
     border-right: 1px solid #e0e0e0;
+    min-height: 100vh;
+    padding: 20px 0;
+}
+
+aside h1 {
+    margin: 0 0 20px 20px;
     color: #2d6cdf;
     font-size: 20px;
 }
 
-/* Menu lateral */
-a {
-    text-decoration: none;
-}
-
-body > a {
-    position: fixed;
-    left: 0;
-    width: 160px;
+aside a {
+    display: block;
     padding: 10px 20px;
-    background-color: #ffffff;
+    text-decoration: none;
     color: #555555;
     font-size: 14px;
 }
 
-body > a:nth-of-type(1) { top: 80px; }
-body > a:nth-of-type(2) { top: 116px; }
-body > a:nth-of-type(3) { top: 152px; }
-body > a:nth-of-type(4) { top: 188px; }
-
-body > a:hover {
+aside a:hover {
     color: #2d6cdf;
 }
 
-/* Deixa a aba marcada como ativa */
-body > a:nth-of-type(4) {
+/* Deixa o link "Pet" marcado como ativo */
+aside a:nth-of-type(1) {
+    background-color: #eaf1fd;
     color: #2d6cdf;
     font-weight: bold;
 }
 
 /* Conteúdo principal */
 main {
-    margin-left: 200px;
+    flex: 1;
     padding: 30px;
-    
 }
 
-/* Cabeçalho  */
+/* Cabeçalho (breadcrumb + usuário) */
 header {
     display: flex;
     justify-content: space-between;
@@ -82,20 +72,33 @@ header {
     font-size: 14px;
 }
 
-h2 {
-    margin-bottom: 20px;
-}
-
-/* Formulário de nova reserva */
-form {
-    background-color: #ffffff;
+/* Cartão do formulário */
+main > div {
+    background-color: #f0f0f0;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     padding: 25px;
-    max-width: 500px;
 }
 
-form > div {
+main > div > h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* Form em duas partes: campos à esquerda e imagem à direita */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+/* Coluna dos campos */
+form > div:first-child {
+    flex: 1;
+    min-width: 300px;
+}
+
+form > div:first-child > div {
     margin-bottom: 20px;
 }
 
@@ -107,38 +110,41 @@ label {
 }
 
 input,
-textarea {
+select {
+    width: 100%;
+    max-width: 350px;
     padding: 8px;
     border: 1px solid #cccccc;
     border-radius: 4px;
+    background-color: #ffffff;
     font-family: Arial, sans-serif;
-}
-
-input[type="text"],
-textarea {
-    width: 100%;
-}
-
-input[type="date"] {
-    width: 160px;
-    margin-right: 10px;
-}
-
-textarea {
-    resize: vertical;
-}
-
-/* Total das diárias */
-form > p {
     font-size: 14px;
 }
 
-form > p span {
-    color: #2d6cdf;
-    font-weight: bold;
+/* Coluna da imagem */
+form > div:nth-child(2) {
+    width: 120px;
+}
+
+form > div:nth-child(2) p {
+    font-size: 13px;
+    color: #777777;
+    margin-bottom: 8px;
+}
+
+form > div:nth-child(2) img {
+    width: 120px;
+    height: 120px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    background-color: #ffffff;
 }
 
 /* Botões */
+form > div:last-child {
+    width: 100%;
+}
+
 button {
     cursor: pointer;
     border-radius: 4px;
