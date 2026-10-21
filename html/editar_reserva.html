@@ -58,7 +58,7 @@
 
             <h2>Editar reserva</h2>
 
-            <form>
+            <form id="formEditarReserva">
 
                 <!-- Proprietário -->
                 <div>
@@ -147,7 +147,7 @@
 
                     <br>
 
-                    <select
+                    <select id="status" name="status" required
                         id="status"
                         name="status"
                         required
@@ -179,8 +179,8 @@
 
                     Total das diárias:
 
-                    <span>
-                        R$ 40,00
+                    <span id="totalDiarias">
+                        R$ 0,00
                     </span>
 
                 </p>
@@ -191,7 +191,7 @@
                     <button type="submit">
                          Salvar
                     </button>
-                    <button type="reset">
+                    <button type="button" id="limparFormulario">
                          Limpar
                     </button>
 
@@ -201,7 +201,7 @@
 
 
     </main>
-
+<script src="/JS/script.js" defer></script>
 </body>
 
 </html>
