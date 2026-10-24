@@ -1,6 +1,11 @@
 
 const CHAVE_RESERVAS = "hotelPetReservas";
-const VALOR_DIARIA = 40;
+const CHAVE_DIARIA = "hotelPetValorDiaria";
+
+function obterValorDiaria() {
+    const valor = localStorage.getItem(CHAVE_DIARIA);
+    return valor ? Number(valor) : 40;
+}
 
 function obterReservas() {
     return JSON.parse(localStorage.getItem(CHAVE_RESERVAS)) || [];
@@ -27,7 +32,7 @@ function calcularTotal(inicio, fim) {
     const dataFim = new Date(fim + "T00:00:00");
     const diarias = Math.round((dataFim - dataInicio) / 86400000);
 
-    return diarias * VALOR_DIARIA;
+    return diarias * obterValorDiaria();
 }
 
 function formatarMoeda(valor) {
@@ -41,6 +46,9 @@ function formatarMoeda(valor) {
 function configurarCadastro() {
     const formulario = document.querySelector("#formNovaReserva");
     if (!formulario) return;
+    formulario.addEventListener("input", atualizarTotalEdicao);
+    formulario.addEventListener("change", atualizarTotalEdicao);
+    atualizarTotalEdicao();
 
     formulario.addEventListener("submit", function (event) {
         event.preventDefault();
@@ -102,7 +110,7 @@ function exibirReservas() {
             formatarData(reserva.dataInicio),
             formatarData(reserva.dataFim),
             nomeStatus(reserva.status),
-            formatarMoeda(reserva.total)
+            formatarMoeda(calcularTotal(reserva.dataInicio, reserva.dataFim))
         ];
 
         dados.forEach(texto => {
@@ -181,7 +189,7 @@ function configurarEdicao() {
     document.querySelector("#status").value = reserva.status || "reservado";
 
     const total = document.querySelector("#totalDiarias");
-    if (total) total.textContent = formatarMoeda(reserva.total);
+    if (total) total.textContent = formatarMoeda(calcularTotal(reserva.dataInicio, reserva.dataFim));
 
     formulario.addEventListener("submit", function (event) {
         event.preventDefault();
@@ -267,7 +275,7 @@ function configurarConsulta() {
     preencher("#visualPartida", formatarData(reserva.dataFim));
     preencher("#visualNotas", reserva.notas);
     preencher("#visualStatus", nomeStatus(reserva.status));
-    preencher("#visualTotal", formatarMoeda(reserva.total));
+    preencher("#visualTotal", formatarMoeda(calcularTotal(reserva.dataInicio, reserva.dataFim)));
     preencher("#visualCriado", reserva.criadoEm
         ? new Date(reserva.criadoEm).toLocaleDateString("pt-BR")
         : "-");
@@ -282,6 +290,7 @@ document.addEventListener("DOMContentLoaded", () => {
     configurarEdicao();
     configurarConsulta();
     configurarLimparFormulario();
+    configurarConfiguracoes();
 });
 
 
@@ -364,5 +373,29 @@ function configurarLimparFormulario() {
         if (total) {
             total.textContent = "R$ 0,00";
         }
+    });
+}
+
+// CONFIGURAÇÕES
+function configurarConfiguracoes() {
+    const formulario = document.querySelector("#formConfiguracoes");
+    if (!formulario) return;
+
+    const campoDiaria = document.querySelector("#valor_diaria");
+    campoDiaria.value = obterValorDiaria();
+
+    formulario.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const valor = Number(campoDiaria.value);
+
+        if (!valor || valor <= 0) {
+            alert("Informe um valor de diária válido.");
+            return;
+        }
+
+        localStorage.setItem(CHAVE_DIARIA, valor);
+        alert("Configurações salvas com sucesso!");
+        window.location.href = "tela_reserva.html";
     });
 }
