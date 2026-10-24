@@ -62,11 +62,11 @@
             <!-- ações -->
             <div>
 
-                <a href="editar_pet.html">
+                <a id="linkEditar" href="editar_pet.html">
                      Editar
                 </a>
 
-                <a>
+                <a id="linkDeletar" >
                      Deletar
                 </a>
 
@@ -74,47 +74,45 @@
 
 
             <!-- dados do pet -->
-            <div>
+            <div id="detalhesPet">
 
                 <p>
                     Proprietário:
-                    <span>José da Silva</span>
+                    <span id="visualProprietario">José da Silva</span>
                 </p>
 
                 <p>
                     Id:
-                    <span>1234509876</span>
+                    <span id="visualId">1234509876</span>
                 </p>
 
                 <p>
                     Nome:
-                    <span>Max</span>
+                    <span id="visualNome">Max</span>
                 </p>
 
                 <p>
                     Tipo:
-                    <span>Cachorro</span>
+                    <span id="visualTipo">Cachorro</span>
                 </p>
 
                 <p>
                     Raça:
-                    <span>Pastor Alemão</span>
+                    <span  id="visualRaca">Pastor Alemão</span>
+                </p>
+
+                <p>
+                Tamanho:
+                   <span id="visualTamanho">Grande</span>
                 </p>
 
                 <!-- reservas -->
-                <div>
+                <div id="listaReservasPet">
 
                     <p>
                         Reservas:
                     </p>
 
-                    <a href="">
-                        15/08/2021 - 17/08/2026 (completa)
-                    </a>
-
-                    <a href="">
-                        17/08/2026 - 20/05/2021 (em andamento)
-                    </a>
 
                 </div>
 
@@ -124,16 +122,17 @@
             <!-- voltar -->
             <div>
 
-                <a href="tela_pet.htmld">
+                <a href="tela_pet.html">
                      Voltar
                 </a>
 
             </div>
+            
 
         </div>
 
     </main>
-<script src="script.js" defer></script>
+<script src="/JS/pets.js" defer></script>
 </body>
 
 </html>

@@ -7,7 +7,7 @@
 
     <title>Hotel Pet  Editar Pet</title>
 
-    <link rel="stylesheet" href="/css/editar_pet.css"
+    <link rel="stylesheet" href="/css/editar_pet.css">
 </head>
 
 <body>
@@ -55,7 +55,7 @@
             <h2>Editar Pet</h2>
 
 
-            <form>
+            <form id="formEditarPet">
 
                 <!-- campos do formulário -->
                 <div>
@@ -66,6 +66,13 @@
                         <input type="text" id="nome" name="nome" value="Max" required>
 
                     </div>
+
+                    <div>
+
+                       <label for="proprietario">Proprietário *</label>
+                       <input type="text" id="proprietario" name="proprietario" required>
+
+                    </div> 
 
                     <div>
 
@@ -117,7 +124,7 @@
         </div>
 
     </main>
-<script src="/JS/script.js" defer></script>
+<script src="/JS/pets.js" defer></script>
 </body>
 
 </html>

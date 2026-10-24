@@ -7,7 +7,7 @@
 
     <title>Hotel Pet  Pets</title>
 
-    <link rel="stylesheet" href="/css/tela_pet.css"
+    <link rel="stylesheet" href="/css/tela_pet.css">
 </head>
 
 <body>
@@ -64,7 +64,7 @@
             
               <a href="/html/novo_pet.html">
               <button type="button">
-                + Nova reserva
+                + Novo Pet
               </button>
               </a>
 
@@ -105,119 +105,25 @@
                 </div>
 
             </form>
+                     <table>
+                            <thead>
+                       <tr>
+                            <th>Id</th>
+                            <th>Nome</th>
+                            <th>Proprietário</th>
+                            <th>Tipo</th>
+                            <th>Raça</th>
+                            <th>Tamanho</th>
+                      </tr>
+                            </thead>
 
-
-            <!-- tabela de pets -->
-            <table>
-
-                <thead>
-
-                    <tr>
-
-                        <th></th>
-
-                        <th>
-                            Id
-                        </th>
-
-                        <th>
-                            nome
-                        </th>
-
-                        <th>
-                            tipo
-                        </th>
-
-                        <th>
-                            raça
-                        </th>
-
-                        <th>
-                            tamanho
-                        </th>
-
-                        <th></th>
-
-                    </tr>
-
-                </thead>
-
-                <tbody>
-
-                    <tr>
-
-                        <td>
-                            <input type="checkbox" checked>
-                        </td>
-
-                        <td>
-                            1234984501
-                        </td>
-
-                        <td>
-                            Max
-                        </td>
-
-                        <td>
-                            Cachorro
-                        </td>
-
-                        <td>
-                            Pastor Alemão
-                        </td>
-
-                        <td>
-                            Grande
-                        </td>
-
-                        <td>
-                            <a href="editar_pet.html">Editar</a>
-                            <a href="visualizar_pet.html">Visualizar</a>
-                        </td>
-
-                    </tr>
-
-                    <tr>
-
-                        <td>
-                            <input type="checkbox">
-                        </td>
-
-                        <td>
-                            1234984501
-                        </td>
-
-                        <td>
-                            Ginger
-                        </td>
-
-                        <td>
-                            Gato
-                        </td>
-
-                        <td>
-                            Não definida
-                        </td>
-
-                        <td>
-                            Pequeno
-                        </td>
-
-                        <td>
-                            <a href="editar_pet.html">Editar</a>
-                            <a href="visualizar_pet.html">Visualizar</a>
-                        </td>
-
-                    </tr>
-
-                </tbody>
-
-            </table>
+                           <tbody id="listaPets"></tbody>
+                    </table>
 
         </div>
 
     </main>
-<script src="script.js" defer></script>
+<script src="/JS/pets.js" defer></script>
 </body>
 
 </html>
