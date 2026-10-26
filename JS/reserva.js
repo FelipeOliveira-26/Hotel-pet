@@ -91,11 +91,13 @@ function configurarCadastro() {
 }
 
 // EXIBIR RESERVAS NA TABELA
-function exibirReservas() {
+function exibirReservas(reservas = obterReservas()) {
     const tabela = document.querySelector("#listaReservas");
     if (!tabela) return;
 
-    obterReservas().forEach(reserva => {
+    tabela.innerHTML = "";
+
+    reservas.forEach(reserva => {
         const linha = document.createElement("tr");
 
         const celulaCheckbox = document.createElement("td");
@@ -291,6 +293,9 @@ document.addEventListener("DOMContentLoaded", () => {
     configurarConsulta();
     configurarLimparFormulario();
     configurarConfiguracoes();
+    configurarFiltroReservas();
+    
+    
 });
 
 
@@ -397,5 +402,70 @@ function configurarConfiguracoes() {
         localStorage.setItem(CHAVE_DIARIA, valor);
         alert("Configurações salvas com sucesso!");
         window.location.href = "tela_reserva.html";
+    });
+}
+
+// PESQUISAR RESERVAS
+function converterValor(texto) {
+    texto = texto.replace("R$", "").trim();
+
+    if (texto.includes(",")) {
+        texto = texto.replace(/\./g, "").replace(",", ".");
+    }
+
+    return Number(texto);
+}
+
+function configurarFiltroReservas() {
+    const formulario = document.querySelector("#formFiltroReservas");
+    if (!formulario) return;
+
+    formulario.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const id = document.querySelector("#id").value.trim();
+        const proprietario = document.querySelector("#proprietario").value.trim().toLowerCase();
+        const status = document.querySelector("#status").value;
+        const dataInicio = document.querySelector("#data_inicio").value;
+        const dataFim = document.querySelector("#data_fim").value;
+        const totalMin = document.querySelector("#total_min").value.trim();
+        const totalMax = document.querySelector("#total_max").value.trim();
+        const pet = document.querySelector("#pet").value.trim().toLowerCase();
+
+        // status que contam como o mesmo no filtro
+        const equivalentes = {
+            "em-progresso": ["em-progresso", "andamento"],
+            "finalizada": ["finalizada", "finalizado"]
+        };
+
+        const filtradas = obterReservas().filter(reserva => {
+            const total = calcularTotal(reserva.dataInicio, reserva.dataFim);
+
+            if (id && !reserva.id.includes(id)) return false;
+
+            if (proprietario && !(reserva.proprietario || "").toLowerCase().includes(proprietario)) return false;
+
+            if (pet && !reserva.pet.toLowerCase().includes(pet)) return false;
+
+            if (status) {
+                const aceitos = equivalentes[status] || [status];
+                if (!aceitos.includes(reserva.status)) return false;
+            }
+
+            if (dataInicio && reserva.dataInicio < dataInicio) return false;
+            if (dataFim && reserva.dataFim > dataFim) return false;
+
+            if (totalMin && total < converterValor(totalMin)) return false;
+            if (totalMax && total > converterValor(totalMax)) return false;
+
+            return true;
+        });
+
+        exibirReservas(filtradas);
+    });
+
+    // botão Limpar: mostra todas de novo
+    formulario.addEventListener("reset", () => {
+        exibirReservas();
     });
 }
