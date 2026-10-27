@@ -78,11 +78,12 @@ function configurarCadastroUsuario() {
 }
 
 // EXIBIR USUÁRIOS NA TABELA
-function exibirUsuarios() {
+function exibirUsuarios(usuarios = obterUsuarios()) {
     const tabela = document.querySelector("#listaUsuarios");
     if (!tabela) return;
+    tabela.innerHTML = "";
 
-    obterUsuarios().forEach(usuario => {
+   usuarios.forEach(usuario => {
         const linha = document.createElement("tr");
 
         // checkbox
@@ -260,9 +261,49 @@ function configurarEdicaoUsuario() {
     });
 }
 
+// PESQUISAR USUÁRIOS
+function configurarFiltroUsuarios() {
+    const formulario = document.querySelector("#formFiltroUsuarios");
+    if (!formulario) return;
+
+    formulario.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        
+        const email = document.querySelector("#email").value.trim().toLowerCase();
+        const status = document.querySelector("#status").value;
+        const criadoInicio = document.querySelector("#criado_inicio").value;
+        const nome = document.querySelector("#nome").value.trim().toLowerCase();
+        const funcao = document.querySelector("#funcao").value;
+
+        const filtrados = obterUsuarios().filter(usuario => {
+            // data de criação no formato aaaa-mm-dd (horário local)
+            const criado = new Date(usuario.criadoEm).toLocaleDateString("sv-SE");
+            const nomeCompleto = (usuario.nome + " " + usuario.sobrenome).toLowerCase();
+
+            
+            if (email && !usuario.email.toLowerCase().includes(email)) return false;
+            if (nome && !nomeCompleto.includes(nome)) return false;
+            if (status && usuario.status !== status) return false;
+            if (funcao && usuario.funcao !== funcao) return false;
+            if (criadoInicio && criado < criadoInicio) return false;
+
+            return true;
+        });
+
+        exibirUsuarios(filtrados);
+    });
+
+    // botão Limpar: mostra todos de novo
+    formulario.addEventListener("reset", () => {
+        exibirUsuarios();
+    });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     configurarCadastroUsuario();
     exibirUsuarios();
     configurarBotoesUsuario();
     configurarEdicaoUsuario();
+    configurarFiltroUsuarios();
 });
