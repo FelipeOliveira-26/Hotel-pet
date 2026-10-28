@@ -51,11 +51,12 @@ function configurarCadastroPet() {
 }
 
 // EXIBIR PETS NA TABELA
-function exibirPets() {
+function exibirPets(pets = obterPets()) {
     const tabela = document.querySelector("#listaPets");
     if (!tabela) return;
+    tabela.innerHTML = "";
 
-    obterPets().forEach(pet => {
+    pets.forEach(pet => {
         const linha = document.createElement("tr");
 
         const dados = [
@@ -219,9 +220,41 @@ function configurarConsultaPet() {
     });
 }
 
+// PESQUISAR PETS
+function configurarFiltroPets() {
+    const formulario = document.querySelector("#formFiltroPets");
+    if (!formulario) return;
+
+    formulario.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const id = document.querySelector("#id").value.trim();
+        const raca = document.querySelector("#raca").value.trim().toLowerCase();
+        const nome = document.querySelector("#nome").value.trim().toLowerCase();
+        const tamanho = document.querySelector("#tamanho").value;
+
+        const filtrados = obterPets().filter(pet => {
+            if (id && !pet.id.includes(id)) return false;
+            if (raca && !pet.raca.toLowerCase().includes(raca)) return false;
+            if (nome && !pet.nome.toLowerCase().includes(nome)) return false;
+            if (tamanho && pet.tamanho !== tamanho) return false;
+
+            return true;
+        });
+
+        exibirPets(filtrados);
+    });
+
+    // botão Limpar: mostra todos de novo
+    formulario.addEventListener("reset", () => {
+        exibirPets();
+    });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     configurarCadastroPet();
     exibirPets();
     configurarEdicaoPet();
     configurarConsultaPet();
+    configurarFiltroPets();
 });
